@@ -4,43 +4,81 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>350</y>
+      <x>420</x>
+      <y>290</y>
       <w>210</w>
-      <h>70</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>Class: Game
 --
-id: Long="36548"
-</panel_attributes>
+-currentRound: int
+-currentTurn: int
+-currentPlayer: int
+void startgame()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>790</y>
-      <w>210</w>
-      <h>70</h>
+      <x>620</x>
+      <y>600</y>
+      <w>520</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Class: Card
 --
-enum CardType
-</panel_attributes>
+-enum CardType{Nigiri,Sashimi,Tempura,Dumpling,MakiRoll}
+--
+const CardType&amp; type(card::CardType cardType) const
+virtual std::string str(card::CardType cardType) const
+	typedef std::vector&lt;card*&gt; CardCollection
+	virtual int score(CardCollection tableau, CardCollection otherPlayerTableau) const</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>620</y>
-      <w>210</w>
-      <h>70</h>
+      <x>810</x>
+      <y>280</y>
+      <w>380</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>Class: Player
 --
-id: Long="36548"
+_currentScore: int
+_name : string
+_names: string
+typedef std::vector&lt;card*&gt; CardCollection
+std::vector&lt;card::CardType&gt; hand
+void addCardToTableau(card* card, CardCollection* hand)
+--
++addCardToTableau()
++calculateScore()
++clearTableau()
++printTableau()
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>330</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>380</y>
+      <w>230</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0;210.0;150.0;210.0;220.0</additional_attributes>
   </element>
 </diagram>
