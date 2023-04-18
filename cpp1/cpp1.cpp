@@ -2,10 +2,11 @@
 //
 
 #include <iostream>
-
+#include "game.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+    game::startgame();
+    ;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
